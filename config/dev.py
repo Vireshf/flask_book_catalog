@@ -1,4 +1,3 @@
-import os
 
 DEBUG = True
 SECRET_KEY = "1234"
