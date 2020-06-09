@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block title %} Error {% endblock %}
+
+{% block content %}
+	<div class="container" style="margin-left: 45px" >
+		<h4>sorry, the page you are looking for could not be found</h4><hr>
+		<span class="label label-primary"><a href="{{ url_for('main.book_details') }}" style="color:floralwhite">Back to home</a></span>
+	</div>
+{% endblock %}
