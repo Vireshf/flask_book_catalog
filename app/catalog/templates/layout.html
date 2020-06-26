@@ -11,7 +11,7 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
             <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
             <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-            <script src="{{url_for('static',filename='js/alertbox.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/dropdown.js')}}"></script>
         </head>
     {% endblock head %}
 
@@ -46,8 +46,11 @@
                     </li>
                     <li>
                         {% if current_user.is_authenticated %}
-                        <a href="{{url_for('main.create_book')}}">Menu</a></li>
+                            {% if current_user.user_name.title() == 'Admin' %}
+                                <a href="{{url_for('main.book_modify')}}">Menu</a>
+                            {% endif %}
                         {% endif %}
+                    </li>
                 </ul>
             </div>
         </nav>

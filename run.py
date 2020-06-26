@@ -2,11 +2,12 @@ from app import create_app,db
 from app.auth.models import User
 from sqlalchemy import exc
 
-flask_app = create_app('prod')
+flask_app = create_app('dev')
 with flask_app.app_context():
 	db.create_all()
-	try:
-		if not User.query.filter_by(user_name='viru').first():
-			User.create_user('viru','viru@gmail.com','12345')
-	except exc.IntegrityError:
-		flask_app.run()
+	if not User.query.filter_by(user_email='root@gmail.com').first():
+		admin = User.create_user('admin','root@gmail.com','1234')
+		db.session.add(admin)
+		db.session.commit()
+			
+	flask_app.run()

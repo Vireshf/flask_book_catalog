@@ -24,6 +24,5 @@ class User(UserMixin,db.Model):
 	def check_pasword(self,password):
 		return bcrypt.check_password_hash(self.user_password,password)
 
-@loginmanager.user_loader    #stores user_id in session
-def load_user(id):            # returns user object
-	return User.query.get(int(id))
+
+

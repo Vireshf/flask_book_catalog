@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h4 style="margin-left: 50px">select the book to delete</h4>
+<hr>
+	<table style="margin-left:50px;margin-top:20px;border-collapse:separate;border-spacing:0 15px">
+		<div class="container">
+		{% for book in books %}
+		<tr style="margin-bottom: 20px">
+		<td><span style="font-family: Sansita;width:200px">{{book.title}}</span>&nbsp;&nbsp;</td>
+
+		<td><a href="{{url_for('main.delete_book',book_id = book.id)}}"><button type="button" class="btn btn-primary">Delete</button></a>&nbsp;&nbsp;</td>
+
+		<td><a href="{{url_for('main.edit_book',book_id = book.id)}}"><button type="button" class="btn btn-primary">Edit</button></a>&nbsp;&nbsp;</td>
+		</tr>
+		{% endfor %}
+	    </div>
+	</table>
+{% endblock %}

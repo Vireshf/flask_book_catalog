@@ -10,6 +10,7 @@ db = SQLAlchemy()
 bootstrap = Bootstrap()
 bcrypt = Bcrypt()
 loginmanager = LoginManager()
+#loginmanager.login_view = "authentication.do_the_login_admin"
 loginmanager.login_view = "authentication.do_the_login"
 loginmanager.session_protection = 'strong'
 # migrate = Migrate()

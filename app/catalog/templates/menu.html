@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<div class="container form">
+		<h4>Choose the option</h4>
+		<hr><br>
+
+		<a href="{{url_for('main.add_new_book')}}"><button type="button" class="btn btn-primary">Add new book</button></a>
+		<a href="{{url_for('main.delete_book_selected')}}"><button type="button" class="btn btn-primary">Delete or modify existing books</button></a>
+	</div>
+{% endblock %}

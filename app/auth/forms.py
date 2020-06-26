@@ -22,4 +22,3 @@ class LoginForm(FlaskForm):
 		(3,15,message='should be between 3 to 15 characters')])
 	remember_me = BooleanField('remember_me')
 	submit = SubmitField('Login')
-

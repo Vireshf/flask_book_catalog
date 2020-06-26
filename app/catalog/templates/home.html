@@ -14,9 +14,10 @@
                 <p> Pages: {{ book.num_pages }} </p>
                 <p>Publisher Name: <a href="{{ url_for('main.display_publisher', publisher_id=book.pub_id) }}"> {{ book.pub_name }}
                 </a></p>
+                <!--
                 <span class="label label-primary"><a href="{{ url_for('main.delete_book',book_id=book.id) }}" style="color:floralwhite">Delete</a></span>
-                <span class="label label-success"><a href="{{ url_for('main.edit_book',book_id=book.id) }}" style="color:floralwhite">Edit</a></span>
-                <br>
+                <span class="label label-success"><a href="{{ url_for('main.edit_book',book_id=book.id) }}" style="color:floralwhite">Edit</a></span> -->
+                <br><br><br>
             </div>
         {% endfor %}
         </div>

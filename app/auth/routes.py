@@ -5,6 +5,7 @@ from app.auth.forms import LoginForm
 from app.auth import authentication as at
 from app.catalog import main
 from app.auth.models import User
+from app import loginmanager
 
 
 
@@ -55,4 +56,7 @@ def do_the_logout():
 def page_not_found(error):
 	return render_template('404error.html'), 404
 
+@loginmanager.user_loader    #stores user_id in session
+def load_user(id):            # returns user object
+	return User.query.get(int(id))
 
